@@ -129,7 +129,7 @@
     
     NSString *subscriberKey = NSStringFromClass(event.class);
     
-    dispatch_async(self.observationInfo, ^{
+    dispatch_async(self.operateQueue, ^{
         NSNumber *times = publishTimes[subscriberKey];
         if (times == nil) { times = @0; }
         times = @(times.unsignedLongValue + 1);
